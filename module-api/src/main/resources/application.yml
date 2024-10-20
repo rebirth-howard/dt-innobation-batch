@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: local #default
+
+server:
+  servlet:
+    context-path: /api
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    tagsSorter: alpha
+    operationsSorter: alpha

@@ -1,0 +1,38 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+    import:
+      - 'classpath:persistence-property-local.yml'
+  data:
+    redis:
+      enabled: true
+      host: localhost
+      port: 46379
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: 10000ms
+  flyway:
+    enabled: true # Flyway 사용 여부
+
+jwt:
+  helper-enabled: true
+  pre-fix:
+    server: api
+  access-token:
+    secret-key: RFQtSW5ub3ZhdGlvbl9KV1RfQWNjZXNzX1Rva2VuX1NlY3JldEtleQ== # DT-Innovation_JWT_Access_Token_SecretKey
+  refresh-token:
+    secret-key: RFQtSW5ub3ZhdGlvbl9KV1RfUmVmcmVzaF9Ub2tlbl9TZWNyZXRLZXk= # DT-Innovation_JWT_Refresh_Token_SecretKey
+
+logging:
+  level:
+    root: INFO
+#    org.springframework: DEBUG # Spring 관련 모든 디버깅 로그
+#    org.hibernate.SQL: DEBUG  # Hibernate SQL 실행 로그
+#    org.apache.http: DEBUG  # HttpClient 요청/응답 로깅
+#    com.zaxxer.hikari: DEBUG  # HikariCP 커넥션 풀 디버깅
+#    io.jsonwebtoken: DEBUG  # JWT 토큰 처리 디버깅
+#    redis: DEBUG  # Redis 접근 로깅

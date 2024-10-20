@@ -1,0 +1,22 @@
+server:
+  port: 9070
+
+spring:
+  config:
+    activate:
+      on-profile: local
+    import:
+      - 'classpath:persistence-property-local.yml'
+  batch:
+    jdbc:
+      initialize-schema: always
+
+logging:
+  level:
+    root: info
+#    org.springframework: DEBUG # Spring 관련 모든 디버깅 로그
+#    org.hibernate.SQL: DEBUG  # Hibernate SQL 실행 로그
+#    org.apache.http: DEBUG  # HttpClient 요청/응답 로깅
+#    com.zaxxer.hikari: DEBUG  # HikariCP 커넥션 풀 디버깅
+#    io.jsonwebtoken: DEBUG  # JWT 토큰 처리 디버깅
+#    redis: DEBUG  # Redis 접근 로깅

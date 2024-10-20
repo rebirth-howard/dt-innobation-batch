@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+    import:
+      - 'classpath:persistence-property-prod.yml'
+
+logging:
+  level:
+    root: info
